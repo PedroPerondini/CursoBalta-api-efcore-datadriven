@@ -52,13 +52,13 @@ namespace CursoBalta
                     ValidateAudience = false
                 };
             });
-            //services.AddDbContext<DataContext> (opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            services.AddDbContext<DataContext> (opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CursoBalta", Version = "v1" });
             });
 
-            services.AddDbContext<DataContext> (opt => opt.UseInMemoryDatabase("Database"));
+            //services.AddDbContext<DataContext> (opt => opt.UseInMemoryDatabase("Database"));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
